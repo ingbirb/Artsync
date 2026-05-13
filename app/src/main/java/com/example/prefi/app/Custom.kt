@@ -5,7 +5,7 @@ import com.example.prefi.data.User
 
 class Custom: Application(){
     var defaultUsername = "test"
-    var defaultPassword = "1234"
+    var defaultPassword = "123"
 
     var loginUser = User()
 
