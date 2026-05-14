@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="textProjectTitle" type="id" />
+    <item name="textProjectDeadline" type="id" />
+    <item name="progressProject" type="id" />
+    <item name="textProjectCategory" type="id" />
+</resources>
