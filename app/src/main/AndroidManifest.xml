@@ -20,6 +20,12 @@
             android:name=".screens.home.HomeActivity"
             android:exported="false" />
         <activity
+            android:name=".screens.profile.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.inspiration.InspirationActivity"
+            android:exported="false" />
+        <activity
             android:name=".screens.login.LoginActivity"
             android:exported="true">
             <intent-filter>

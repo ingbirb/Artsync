@@ -4,4 +4,8 @@
     <item name="textProjectDeadline" type="id" />
     <item name="progressProject" type="id" />
     <item name="textProjectCategory" type="id" />
+    <item name="editextPassword" type="id" />
+    <item name="editextUsername" type="id" />
+    <item name="buttonRegister" type="id" />
+    <item name="edittextConfirmPassword" type="id" />
 </resources>

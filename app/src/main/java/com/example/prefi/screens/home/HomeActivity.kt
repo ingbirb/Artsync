@@ -25,8 +25,10 @@ class HomeActivity : Activity(), HomeContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        val buttonBackToLogin = findViewById<Button>(R.id.buttonBackToLogin)
         val buttonAddProject = findViewById<Button>(R.id.buttonAddProject)
+        val buttonProfile = findViewById<Button>(R.id.buttonProfile)
+        val buttonInspiration = findViewById<Button>(R.id.buttonInspiration)
+        val buttonLogout = findViewById<Button>(R.id.buttonLogout)
 
         textViewWelcome = findViewById<TextView>(R.id.textviewUser)
         listViewProjects = findViewById<ListView>(R.id.listViewProjects)
@@ -66,9 +68,19 @@ class HomeActivity : Activity(), HomeContract.View {
             Toast.makeText(this, "Added New Project", Toast.LENGTH_SHORT).show()
         }
 
-        buttonBackToLogin.setOnClickListener{
-            val backToLoginIntent = Intent(this, LoginActivity::class.java)
-            startActivity(backToLoginIntent)
+        buttonProfile.setOnClickListener {
+            startActivity(Intent(this, com.example.prefi.screens.profile.ProfileActivity::class.java))
+        }
+
+        buttonInspiration.setOnClickListener {
+            startActivity(Intent(this, com.example.prefi.screens.inspiration.InspirationActivity::class.java))
+        }
+
+        buttonLogout.setOnClickListener {
+            (application as Custom).loginUser = com.example.prefi.data.User() // Clear session
+            val intent = Intent(this, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
     }
 

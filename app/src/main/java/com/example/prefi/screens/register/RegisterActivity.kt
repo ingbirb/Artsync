@@ -19,12 +19,13 @@ class RegisterActivity : Activity(), RegisterContract.View {
 
         registerPresenter = RegisterPresenter(this, RegisterModel(application as Custom))
 
-        val buttonRegister = findViewById<Button>(R.id.buttonRegister)
+        val buttonRegister = findViewById<Button>(R.id.btnSubmit)
+
 
         buttonRegister.setOnClickListener {
-            val username = getEditTextValue(R.id.edittextUsername)
-            val password = getEditTextValue(R.id.edittextPassword)
-            val confirmPassword = getEditTextValue(R.id.edittextConfirmPassword)
+            val username = getEditTextValue(R.id.edittextRegUsername)
+            val password = getEditTextValue(R.id.edittextRegPassword)
+            val confirmPassword = getEditTextValue(R.id.edittextRegRePassword)
 
             registerPresenter.register(username, password, confirmPassword)
         }

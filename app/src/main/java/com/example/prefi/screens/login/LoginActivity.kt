@@ -27,8 +27,8 @@ class LoginActivity : Activity(), LoginContract.View {
         val textviewRegister = findViewById<TextView>(R.id.textviewRegister)
 
         buttonLogin.setOnClickListener{
-           username = getEditTextValue(R.id.editextUsername)
-           password = getEditTextValue(R.id.editextPassword)
+           username = getEditTextValue(R.id.edittextUsername)
+           password = getEditTextValue(R.id.edittextPassword)
 
             Presenter.login(username, password)
         }
@@ -54,9 +54,8 @@ class LoginActivity : Activity(), LoginContract.View {
     }
 
     override fun showHome() {
-
         val homeIntent = Intent(this, HomeActivity::class.java)
-
         startActivity(homeIntent)
+        finish()
     }
 }
