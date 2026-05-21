@@ -1,8 +1,10 @@
 package com.example.prefi.data
 
+import java.io.Serializable
+
 data class Project(
     val title: String,
     val deadline: String,
-    val progress: Int, // percentage 0-100
+    var progress: Int, // percentage 0-100
     val category: String
-)
+) : Serializable

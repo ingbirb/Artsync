@@ -7,11 +7,11 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.GridView
 
-class InspirationAdapter(private val context: Context, private val imageIds: List<Int>) : BaseAdapter() {
+class InspirationAdapter(private val context: Context, private val items: MutableList<Any>) : BaseAdapter() {
 
-    override fun getCount(): Int = imageIds.size
+    override fun getCount(): Int = items.size
 
-    override fun getItem(position: Int): Any = imageIds[position]
+    override fun getItem(position: Int): Any = items[position]
 
     override fun getItemId(position: Int): Long = position.toLong()
 
@@ -21,7 +21,7 @@ class InspirationAdapter(private val context: Context, private val imageIds: Lis
             imageView = ImageView(context)
             imageView.layoutParams = ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                500 // Height in pixels, consider using dp in a real app
+                500
             )
             imageView.scaleType = ImageView.ScaleType.CENTER_CROP
             imageView.setPadding(8, 8, 8, 8)
@@ -29,7 +29,13 @@ class InspirationAdapter(private val context: Context, private val imageIds: Lis
             imageView = convertView as ImageView
         }
 
-        imageView.setImageResource(imageIds[position])
+        val item = items[position]
+        when (item) {
+            is Int -> imageView.setImageResource(item)
+            is android.net.Uri -> imageView.setImageURI(item)
+            is android.graphics.Bitmap -> imageView.setImageBitmap(item)
+        }
+
         return imageView
     }
 }

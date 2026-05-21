@@ -1,26 +1,39 @@
 package com.example.prefi.screens.home
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import com.example.prefi.app.Custom
 import com.example.prefi.R
 import com.example.prefi.data.Project
 import com.example.prefi.screens.login.LoginActivity
+import com.example.prefi.screens.project.ProjectActivity
 
-class HomeActivity : Activity(), HomeContract.View {
+class HomeActivity : AppCompatActivity(), HomeContract.View {
 
     private lateinit var dashboardPresenter: HomePresenter
     private lateinit var textViewWelcome: TextView
     
-    // ArrayList and Adapter for ListView
     private lateinit var projectList: ArrayList<Project>
     private lateinit var projectAdapter: ProjectAdapter
     private lateinit var listViewProjects: ListView
+    private var selectedPosition: Int = -1
+
+    private val detailLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val updatedProject = result.data?.getSerializableExtra("updated_project") as? Project
+            if (updatedProject != null && selectedPosition != -1) {
+                projectList[selectedPosition] = updatedProject
+                projectAdapter.notifyDataSetChanged()
+                Toast.makeText(this, "Project updated!", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,8 +60,11 @@ class HomeActivity : Activity(), HomeContract.View {
 
         // 3. Custom ListView Click Listener
         listViewProjects.setOnItemClickListener { _, _, position, _ ->
+            selectedPosition = position
             val selectedProject = projectList[position]
-            Toast.makeText(this, "Opening: ${selectedProject.title}", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ProjectActivity::class.java)
+            intent.putExtra("project", selectedProject)
+            detailLauncher.launch(intent)
         }
 
         // 4. Custom ListView Long Click Listener (Remove Item)
