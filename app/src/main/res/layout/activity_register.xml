@@ -8,6 +8,13 @@
     android:background="#FFDBFD">
 
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo1"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="App Logo"/>
+
     <TextView
         android:id="@+id/textviewRegisterTitle"
         android:layout_width="wrap_content"

@@ -49,7 +49,11 @@ class InspirationActivity : AppCompatActivity() {
             R.drawable.ref4,
             R.drawable.ref5,
             R.drawable.ref6,
-            R.drawable.ref7
+            R.drawable.ref7,
+            R.drawable.ref8,
+            R.drawable.ref9,
+            R.drawable.ref10,
+            R.drawable.ref11
         ))
 
         adapter = InspirationAdapter(this, imageList)
