@@ -18,51 +18,86 @@
             android:src="@android:drawable/ic_menu_gallery"
             android:layout_marginTop="32dp" />
 
-        <TextView
-            android:id="@+id/textProfileName"
+        <EditText
+            android:id="@+id/editProfileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Artist Name"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#6367FF"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:enabled="false"
+            android:background="@null"
+            android:gravity="center"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bio / Description"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp" />
+
+        <EditText
+            android:id="@+id/editBio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tell us about yourself..."
+            android:enabled="false"
+            android:background="@null"
+            android:padding="8dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Style Preferences"
             android:textStyle="bold"
-            android:layout_marginTop="24dp" />
-
-        <TextView
-            android:id="@+id/textStylePrefs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Impressionism, Digital Art, Watercolor"
-            android:padding="8dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Completed Works"
-            android:textStyle="bold"
             android:layout_marginTop="16dp" />
 
-        <TextView
-            android:id="@+id/textCompletedWorks"
+        <EditText
+            android:id="@+id/editStylePrefs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1. Sunset Over Hills\n2. Abstract Dreams\n3. Portrait of a Friend"
+            android:hint="Impressionism, Digital Art, etc."
+            android:enabled="false"
+            android:background="@null"
             android:padding="8dp" />
 
-        <Button
-            android:id="@+id/buttonBackHome"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Back to Dashboard"
+            android:orientation="horizontal"
             android:layout_marginTop="32dp"
-            android:backgroundTint="#8494FF" />
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/buttonEditProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Edit"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#8494FF" />
+
+            <Button
+                android:id="@+id/buttonSaveProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Save"
+                android:visibility="gone"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#6367FF" />
+
+            <Button
+                android:id="@+id/buttonBackHome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Back"
+                android:backgroundTint="#FF6363" />
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

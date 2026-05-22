@@ -6,7 +6,7 @@
     <uses-feature android:name="android.hardware.camera" android:required="false" />
 
     <application
-        android:name=".app.Custom"
+        android:name="com.example.artsync.app.Custom"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,22 +17,22 @@
         android:theme="@style/Theme.Prefi"
         tools:targetApi="31">
         <activity
-            android:name=".screens.register.RegisterActivity"
+            android:name="com.example.artsync.screens.register.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.home.HomeActivity"
+            android:name="com.example.artsync.screens.home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.profile.ProfileActivity"
+            android:name="com.example.artsync.screens.profile.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.inspiration.InspirationActivity"
+            android:name="com.example.artsync.screens.inspiration.InspirationActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.project.ProjectActivity"
+            android:name="com.example.artsync.screens.project.ProjectActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.login.LoginActivity"
+            android:name="com.example.artsync.screens.login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
