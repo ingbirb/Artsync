@@ -26,11 +26,13 @@ class ProjectAdapter(private val context: Context, private val projectList: Arra
         val textTitle = view.findViewById<TextView>(R.id.textProjectTitle)
         val textDeadline = view.findViewById<TextView>(R.id.textProjectDeadline)
         val progressBar = view.findViewById<ProgressBar>(R.id.progressProject)
+        val textProgressPercent = view.findViewById<TextView>(R.id.textProgressPercent)
         val textCategory = view.findViewById<TextView>(R.id.textProjectCategory)
 
         textTitle.text = project.title
         textDeadline.text = "Deadline: ${project.deadline}"
         progressBar.progress = project.progress
+        textProgressPercent.text = "${project.progress}%"
         textCategory.text = project.category
 
         return view

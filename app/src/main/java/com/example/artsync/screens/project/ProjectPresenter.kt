@@ -17,8 +17,8 @@ class ProjectPresenter(
         view.updateProgressText(progress)
     }
 
-    override fun saveProgress(project: Project, newProgress: Int) {
-        model.updateProjectProgress(project, newProgress)
-        view.onProgressUpdated("Progress updated to $newProgress%")
+    override fun saveProject(project: Project) {
+        model.updateProject(project)
+        view.onProgressUpdated("Project '${project.title}' updated successfully!")
     }
 }

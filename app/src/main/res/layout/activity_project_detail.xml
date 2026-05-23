@@ -23,13 +23,16 @@
             android:layout_marginBottom="10dp"
             android:inputType="textCapSentences" />
 
-        <TextView
-            android:id="@+id/textViewDetailCategory"
+        <EditText
+            android:id="@+id/editTextDetailCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Category: Fine Art"
+            android:hint="Category"
             android:textSize="16sp"
-            android:layout_marginBottom="20dp"/>
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp"
+            android:layout_marginBottom="20dp"
+            android:inputType="textCapWords" />
 
         <ImageView
             android:id="@+id/imageViewProject"
@@ -51,6 +54,7 @@
             android:backgroundTint="#8494FF" />
 
         <TextView
+            android:id="@+id/textViewProgressLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Completion Progress"
@@ -73,6 +77,8 @@
             android:layout_height="wrap_content"
             android:max="100"
             android:progress="30"
+            android:progressTint="#FFB300"
+            android:thumbTint="#FFB300"
             android:layout_marginBottom="40dp"/>
 
         <Button

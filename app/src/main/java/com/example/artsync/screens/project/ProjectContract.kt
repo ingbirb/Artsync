@@ -12,6 +12,6 @@ class ProjectContract {
     interface Presenter {
         fun loadProject(project: Project?)
         fun onProgressChanged(progress: Int)
-        fun saveProgress(project: Project, newProgress: Int)
+        fun saveProject(project: Project)
     }
 }

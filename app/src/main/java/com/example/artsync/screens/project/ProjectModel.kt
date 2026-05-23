@@ -9,6 +9,4 @@ class ProjectModel(private val app: Custom) {
         // Here you would normally save to a database or server
         // For now, we are modifying the object directly which is reflected in HomeActivity
     }
-
-    fun updateProjectProgress(project: Project, newProgress: Int) {}
 }

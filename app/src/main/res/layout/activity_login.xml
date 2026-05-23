@@ -23,6 +23,17 @@
         android:textSize="26sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="“Turn chaos into creativity—organize, track, and thrive with ArtSync.”"
+        android:textColor="#6367FF"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"
+        android:paddingHorizontal="20dp" />
+
     <EditText
         android:id="@+id/edittextUsername"
         android:layout_width="match_parent"
