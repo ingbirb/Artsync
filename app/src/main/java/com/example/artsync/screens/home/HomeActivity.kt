@@ -33,6 +33,10 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     private lateinit var listViewProjects: ListView
     private var selectedPosition: Int = -1
 
+    companion object {
+        const val RESULT_DELETED = 100
+    }
+
     private val detailLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == RESULT_OK) {
             val updatedProject = result.data?.getSerializableExtra("updated_project") as? Project
@@ -40,6 +44,12 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
                 projectList[selectedPosition] = updatedProject
                 projectAdapter.notifyDataSetChanged()
                 Toast.makeText(this, "Project updated!", Toast.LENGTH_SHORT).show()
+            }
+        } else if (result.resultCode == RESULT_DELETED) {
+            if (selectedPosition != -1) {
+                val removedProject = projectList.removeAt(selectedPosition)
+                projectAdapter.notifyDataSetChanged()
+                Toast.makeText(this, "Deleted: ${removedProject.title}", Toast.LENGTH_SHORT).show()
             }
         }
     }

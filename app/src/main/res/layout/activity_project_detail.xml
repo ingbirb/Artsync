@@ -31,8 +31,21 @@
             android:textSize="16sp"
             android:background="@android:drawable/edit_text"
             android:padding="8dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             android:inputType="textCapWords" />
+
+        <EditText
+            android:id="@+id/editTextDetailDeadline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Deadline (YYYY-MM-DD)"
+            android:textSize="16sp"
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp"
+            android:layout_marginBottom="20dp"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="none" />
 
         <ImageView
             android:id="@+id/imageViewProject"
@@ -87,6 +100,14 @@
             android:layout_height="wrap_content"
             android:text="Update Progress"
             android:backgroundTint="#8494FF"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/buttonDeleteProject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Project"
+            android:backgroundTint="#FF6363"
             android:layout_marginBottom="10dp"/>
 
         <Button
